@@ -1003,10 +1003,11 @@ with tab_comparison:
             fig_bar.add_trace(go.Bar(x=plot_m["Model"], y=plot_m["MAE"], name="MAE", marker_color="#93c5fd"))
             fig_bar.update_layout(
                 barmode="group",
-                height=350,
-                margin=dict(l=20, r=20, t=20, b=20),
-                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-                yaxis=dict(showgrid=True, title="Error (₹)"),
+                height=390,
+                margin=dict(l=85, r=25, t=60, b=85, pad=4),
+                legend=dict(orientation="h", yanchor="bottom", y=1.04, xanchor="right", x=1, font=dict(size=11)),
+                xaxis=dict(showgrid=True, automargin=True, tickangle=-25, tickfont=dict(size=11)),
+                yaxis=dict(showgrid=True, automargin=True, title=dict(text="Error (₹)", font=dict(size=12, weight="bold"), standoff=15), tickprefix="₹", tickformat=",.0f", tickfont=dict(size=11)),
             )
             st.plotly_chart(fig_bar, use_container_width=True)
 
@@ -1016,7 +1017,7 @@ with tab_comparison:
         fig_horizon = go.Figure()
         h_steps = list(range(1, int(forecast_horizon) + 1))
 
-        colors = ["#2563eb", "#10b981", "#f59e0b", "#8b5cf6", "#ef4444"]
+        colors = ["#2563eb", "#10b981", "#f59e0b", "#8b5cf6", "#ef4444", "#06b6d4", "#ec4899", "#14b8a6", "#f97316"]
         for idx, (m_name, step_errs) in enumerate(h_data.items()):
             if len(step_errs) == len(h_steps):
                 fig_horizon.add_trace(
@@ -1026,16 +1027,16 @@ with tab_comparison:
                         mode="lines+markers",
                         name=m_name,
                         line=dict(color=colors[idx % len(colors)], width=2),
-                        marker=dict(size=4),
+                        marker=dict(size=5),
                     )
                 )
 
         fig_horizon.update_layout(
-            height=350,
-            margin=dict(l=20, r=20, t=20, b=20),
-            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-            xaxis=dict(title="Forecast Step (h)", tickmode="linear", dtick=max(1, forecast_horizon // 10)),
-            yaxis=dict(showgrid=True, title="Mean Absolute Error (₹)"),
+            height=390,
+            margin=dict(l=85, r=25, t=60, b=85, pad=4),
+            legend=dict(orientation="h", yanchor="bottom", y=1.04, xanchor="center", x=0.5, font=dict(size=10)),
+            xaxis=dict(title=dict(text="Forecast Step (h)", font=dict(size=12, weight="bold"), standoff=15), automargin=True, showgrid=True, tickmode="linear", dtick=1 if int(forecast_horizon) <= 15 else max(1, int(forecast_horizon) // 8), tickfont=dict(size=11)),
+            yaxis=dict(showgrid=True, automargin=True, title=dict(text="MAE (₹)", font=dict(size=12, weight="bold"), standoff=15), tickprefix="₹", tickformat=",.0f", tickfont=dict(size=11)),
             hovermode="x unified",
         )
         st.plotly_chart(fig_horizon, use_container_width=True)

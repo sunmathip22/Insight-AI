@@ -835,18 +835,93 @@ def build_dashboard_html(
     fig_bar = go.Figure()
     fig_bar.add_trace(go.Bar(x=plot_m["Model"], y=plot_m["RMSE"], name="RMSE", marker_color="#2563eb", hovertemplate="<b>%{x}</b><br>RMSE: ₹%{y:,.2f}<extra></extra>"))
     fig_bar.add_trace(go.Bar(x=plot_m["Model"], y=plot_m["MAE"], name="MAE", marker_color="#93c5fd", hovertemplate="<b>%{x}</b><br>MAE: ₹%{y:,.2f}<extra></extra>"))
-    fig_bar.update_layout(barmode="group", template="plotly_white", height=340, margin=dict(l=20, r=20, t=20, b=20), legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1), yaxis=dict(showgrid=True, title="Error (₹)"))
+    fig_bar.update_layout(
+        barmode="group",
+        template="plotly_white",
+        height=390,
+        margin=dict(l=85, r=25, t=60, b=85, pad=4),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.04,
+            xanchor="right",
+            x=1,
+            bgcolor="rgba(0,0,0,0)",
+            font=dict(size=11),
+        ),
+        xaxis=dict(
+            showgrid=True,
+            automargin=True,
+            tickangle=-25,
+            tickfont=dict(size=11),
+            linecolor="#cbd5e1",
+            linewidth=1,
+        ),
+        yaxis=dict(
+            showgrid=True,
+            automargin=True,
+            title=dict(text="Error (₹)", font=dict(size=12, weight="bold"), standoff=15),
+            tickprefix="₹",
+            tickformat=",.0f",
+            tickfont=dict(size=11),
+            linecolor="#cbd5e1",
+            linewidth=1,
+        ),
+    )
     chart_bar_html = pio.to_html(fig_bar, full_html=False, include_plotlyjs=False, div_id="chart_bar")
 
     # Horizon degradation
     h_data = eval_res["horizon_error_data"]
     fig_horizon = go.Figure()
     h_steps = list(range(1, int(horizon) + 1))
-    colors = ["#2563eb", "#10b981", "#f59e0b", "#8b5cf6", "#ef4444"]
+    colors = ["#2563eb", "#10b981", "#f59e0b", "#8b5cf6", "#ef4444", "#06b6d4", "#ec4899", "#14b8a6", "#f97316"]
     for idx, (m_name, step_errs) in enumerate(h_data.items()):
         if len(step_errs) == len(h_steps):
-            fig_horizon.add_trace(go.Scatter(x=h_steps, y=step_errs, mode="lines+markers", name=m_name, line=dict(color=colors[idx % len(colors)], width=2), marker=dict(size=4), hovertemplate=f"<b>{m_name} (h=%{{x}})</b><br>MAE: ₹%{{y:,.2f}}<extra></extra>"))
-    fig_horizon.update_layout(template="plotly_white", height=340, margin=dict(l=20, r=20, t=20, b=20), legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1), xaxis=dict(title="Forecast Step (h)", tickmode="linear"), yaxis=dict(showgrid=True, title="MAE (₹)"))
+            fig_horizon.add_trace(
+                go.Scatter(
+                    x=h_steps,
+                    y=step_errs,
+                    mode="lines+markers",
+                    name=m_name,
+                    line=dict(color=colors[idx % len(colors)], width=2),
+                    marker=dict(size=5),
+                    hovertemplate=f"<b>{m_name} (h=%{{x}})</b><br>MAE: ₹%{{y:,.2f}}<extra></extra>",
+                )
+            )
+    fig_horizon.update_layout(
+        template="plotly_white",
+        height=390,
+        margin=dict(l=85, r=25, t=60, b=85, pad=4),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.04,
+            xanchor="center",
+            x=0.5,
+            bgcolor="rgba(0,0,0,0)",
+            font=dict(size=10),
+        ),
+        xaxis=dict(
+            title=dict(text="Forecast Step (h)", font=dict(size=12, weight="bold"), standoff=15),
+            automargin=True,
+            showgrid=True,
+            tickmode="linear",
+            dtick=1 if int(horizon) <= 15 else max(1, int(horizon) // 8),
+            tickfont=dict(size=11),
+            linecolor="#cbd5e1",
+            linewidth=1,
+        ),
+        yaxis=dict(
+            showgrid=True,
+            automargin=True,
+            title=dict(text="MAE (₹)", font=dict(size=12, weight="bold"), standoff=15),
+            tickprefix="₹",
+            tickformat=",.0f",
+            tickfont=dict(size=11),
+            linecolor="#cbd5e1",
+            linewidth=1,
+        ),
+    )
     chart_horizon_html = pio.to_html(fig_horizon, full_html=False, include_plotlyjs=False, div_id="chart_horizon")
 
     metrics_rows = ""
@@ -1333,13 +1408,13 @@ def build_dashboard_html(
                         </div>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <div class="card-panel">
+                                <div class="card-panel h-100 mb-0">
                                     <h6 class="fw-bold mb-2">Error Comparison (RMSE vs MAE)</h6>
                                     {chart_bar_html}
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card-panel">
+                                <div class="card-panel h-100 mb-0">
                                     <h6 class="fw-bold mb-2">Horizon Error Degradation (h = 1 to H)</h6>
                                     {chart_horizon_html}
                                 </div>
