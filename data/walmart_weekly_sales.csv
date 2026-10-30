@@ -1,0 +1,625 @@
+Store,Department,Date,Weekly_Sales,IsHoliday
+1,Electronics,2021-01-08,25620.89,False
+1,Electronics,2021-01-15,24851.36,False
+1,Electronics,2021-01-22,25858.0,False
+1,Electronics,2021-01-29,26976.37,False
+1,Electronics,2021-02-05,24804.08,False
+1,Electronics,2021-02-12,24828.3,True
+1,Electronics,2021-02-19,27119.18,False
+1,Electronics,2021-02-26,26128.65,False
+1,Electronics,2021-03-05,24606.71,False
+1,Electronics,2021-03-12,25895.94,False
+1,Electronics,2021-03-19,24662.66,False
+1,Electronics,2021-03-26,24683.97,False
+1,Electronics,2021-04-02,25592.78,False
+1,Electronics,2021-04-09,22922.92,False
+1,Electronics,2021-04-16,23182.56,False
+1,Electronics,2021-04-23,24660.04,False
+1,Electronics,2021-04-30,24121.06,False
+1,Electronics,2021-05-07,25804.1,False
+1,Electronics,2021-05-14,24300.45,False
+1,Electronics,2021-05-21,23694.3,False
+1,Electronics,2021-05-28,27315.93,False
+1,Electronics,2021-06-04,25225.84,False
+1,Electronics,2021-06-11,25616.67,False
+1,Electronics,2021-06-18,26775.52,False
+1,Electronics,2021-06-25,27900.17,False
+1,Electronics,2021-07-02,28743.49,False
+1,Electronics,2021-07-09,27190.29,False
+1,Electronics,2021-07-16,29122.85,False
+1,Electronics,2021-07-23,27926.62,False
+1,Electronics,2021-07-30,28337.0,False
+1,Electronics,2021-08-06,27973.67,False
+1,Electronics,2021-08-13,31065.35,False
+1,Electronics,2021-08-20,25757.32,False
+1,Electronics,2021-08-27,24476.25,False
+1,Electronics,2021-09-03,26850.76,False
+1,Electronics,2021-09-10,24320.72,True
+1,Electronics,2021-09-17,26132.05,False
+1,Electronics,2021-09-24,23445.57,False
+1,Electronics,2021-10-01,24259.12,False
+1,Electronics,2021-10-08,26189.62,False
+1,Electronics,2021-10-15,26890.83,False
+1,Electronics,2021-10-22,26206.15,False
+1,Electronics,2021-10-29,25871.57,False
+1,Electronics,2021-11-05,25663.94,False
+1,Electronics,2021-11-12,24216.36,False
+1,Electronics,2021-11-19,36438.9,False
+1,Electronics,2021-11-26,36787.1,True
+1,Electronics,2021-12-03,38708.5,False
+1,Electronics,2021-12-10,37840.81,False
+1,Electronics,2021-12-17,35231.68,False
+1,Electronics,2021-12-24,37864.78,True
+1,Electronics,2021-12-31,37002.52,False
+1,Electronics,2022-01-07,25411.91,False
+1,Electronics,2022-01-14,27046.85,False
+1,Electronics,2022-01-21,27595.2,False
+1,Electronics,2022-01-28,27494.75,False
+1,Electronics,2022-02-04,25305.82,False
+1,Electronics,2022-02-11,25992.52,True
+1,Electronics,2022-02-18,26817.31,False
+1,Electronics,2022-02-25,27646.85,False
+1,Electronics,2022-03-04,25852.65,False
+1,Electronics,2022-03-11,26243.73,False
+1,Electronics,2022-03-18,25117.08,False
+1,Electronics,2022-03-25,25028.94,False
+1,Electronics,2022-04-01,27564.04,False
+1,Electronics,2022-04-08,28267.88,False
+1,Electronics,2022-04-15,26506.76,False
+1,Electronics,2022-04-22,27875.38,False
+1,Electronics,2022-04-29,27097.21,False
+1,Electronics,2022-05-06,25862.96,False
+1,Electronics,2022-05-13,27145.29,False
+1,Electronics,2022-05-20,28640.29,False
+1,Electronics,2022-05-27,26697.15,False
+1,Electronics,2022-06-03,28721.93,False
+1,Electronics,2022-06-10,23515.64,False
+1,Electronics,2022-06-17,30841.89,False
+1,Electronics,2022-06-24,29947.52,False
+1,Electronics,2022-07-01,29489.14,False
+1,Electronics,2022-07-08,30001.8,False
+1,Electronics,2022-07-15,27426.83,False
+1,Electronics,2022-07-22,29660.89,False
+1,Electronics,2022-07-29,30406.07,False
+1,Electronics,2022-08-05,31831.24,False
+1,Electronics,2022-08-12,29360.23,False
+1,Electronics,2022-08-19,26021.64,False
+1,Electronics,2022-08-26,26429.26,False
+1,Electronics,2022-09-02,28224.9,False
+1,Electronics,2022-09-09,27515.78,True
+1,Electronics,2022-09-16,26466.83,False
+1,Electronics,2022-09-23,27794.81,False
+1,Electronics,2022-09-30,27298.77,False
+1,Electronics,2022-10-07,28412.42,False
+1,Electronics,2022-10-14,26348.24,False
+1,Electronics,2022-10-21,26840.42,False
+1,Electronics,2022-10-28,26784.06,False
+1,Electronics,2022-11-04,25468.99,False
+1,Electronics,2022-11-11,27692.73,False
+1,Electronics,2022-11-18,38923.09,False
+1,Electronics,2022-11-25,38627.36,True
+1,Electronics,2022-12-02,38351.93,False
+1,Electronics,2022-12-09,36900.14,False
+1,Electronics,2022-12-16,38167.74,False
+1,Electronics,2022-12-23,38289.35,True
+1,Electronics,2022-12-30,37739.09,False
+1,Electronics,2023-01-06,27314.52,False
+1,Electronics,2023-01-13,28045.39,False
+1,Electronics,2023-01-20,29922.25,False
+1,Electronics,2023-01-27,27806.93,False
+1,Electronics,2023-02-03,27934.84,False
+1,Electronics,2023-02-10,27544.04,True
+1,Electronics,2023-02-17,25262.83,False
+1,Electronics,2023-02-24,27652.34,False
+1,Electronics,2023-03-03,27784.97,False
+1,Electronics,2023-03-10,30812.92,False
+1,Electronics,2023-03-17,27517.61,False
+1,Electronics,2023-03-24,28159.19,False
+1,Electronics,2023-03-31,27763.06,False
+1,Electronics,2023-04-07,26369.8,False
+1,Electronics,2023-04-14,29283.37,False
+1,Electronics,2023-04-21,28818.95,False
+1,Electronics,2023-04-28,28892.02,False
+1,Electronics,2023-05-05,26790.69,False
+1,Electronics,2023-05-12,29705.11,False
+1,Electronics,2023-05-19,26223.49,False
+1,Electronics,2023-05-26,28733.57,False
+1,Electronics,2023-06-02,30762.26,False
+1,Electronics,2023-06-09,26810.22,False
+1,Electronics,2023-06-16,30364.71,False
+1,Electronics,2023-06-23,31221.34,False
+1,Electronics,2023-06-30,30491.62,False
+1,Electronics,2023-07-07,29206.83,False
+1,Electronics,2023-07-14,31255.06,False
+1,Electronics,2023-07-21,29865.67,False
+1,Electronics,2023-07-28,31809.73,False
+1,Electronics,2023-08-04,30092.66,False
+1,Electronics,2023-08-11,33203.55,False
+1,Electronics,2023-08-18,27311.26,False
+1,Electronics,2023-08-25,27911.94,False
+1,Electronics,2023-09-01,29355.61,False
+1,Electronics,2023-09-08,26824.32,True
+1,Electronics,2023-09-15,28671.42,False
+1,Electronics,2023-09-22,30045.22,False
+1,Electronics,2023-09-29,26426.13,False
+1,Electronics,2023-10-06,28690.47,False
+1,Electronics,2023-10-13,28808.72,False
+1,Electronics,2023-10-20,29485.34,False
+1,Electronics,2023-10-27,26986.07,False
+1,Electronics,2023-11-03,26905.88,False
+1,Electronics,2023-11-10,29233.07,False
+1,Electronics,2023-11-17,40226.07,False
+1,Electronics,2023-11-24,40192.15,True
+1,Electronics,2023-12-01,40336.29,False
+1,Electronics,2023-12-08,39077.39,False
+1,Electronics,2023-12-15,40241.93,False
+1,Electronics,2023-12-22,40342.15,True
+1,Electronics,2023-12-29,39107.06,False
+1,Grocery,2021-01-08,54664.44,False
+1,Grocery,2021-01-15,51232.97,False
+1,Grocery,2021-01-22,47118.52,False
+1,Grocery,2021-01-29,51786.55,False
+1,Grocery,2021-02-05,47756.84,False
+1,Grocery,2021-02-12,52209.65,True
+1,Grocery,2021-02-19,53186.81,False
+1,Grocery,2021-02-26,48287.0,False
+1,Grocery,2021-03-05,52795.54,False
+1,Grocery,2021-03-12,51467.44,False
+1,Grocery,2021-03-19,52539.02,False
+1,Grocery,2021-03-26,55274.24,False
+1,Grocery,2021-04-02,49967.17,False
+1,Grocery,2021-04-09,48744.69,False
+1,Grocery,2021-04-16,48453.63,False
+1,Grocery,2021-04-23,48686.28,False
+1,Grocery,2021-04-30,50581.44,False
+1,Grocery,2021-05-07,51675.46,False
+1,Grocery,2021-05-14,51562.69,False
+1,Grocery,2021-05-21,52987.31,False
+1,Grocery,2021-05-28,51000.25,False
+1,Grocery,2021-06-04,54649.96,False
+1,Grocery,2021-06-11,50402.87,False
+1,Grocery,2021-06-18,63913.33,False
+1,Grocery,2021-06-25,58725.46,False
+1,Grocery,2021-07-02,55066.78,False
+1,Grocery,2021-07-09,54580.83,False
+1,Grocery,2021-07-16,58512.63,False
+1,Grocery,2021-07-23,56796.18,False
+1,Grocery,2021-07-30,59188.23,False
+1,Grocery,2021-08-06,58634.71,False
+1,Grocery,2021-08-13,57317.93,False
+1,Grocery,2021-08-20,49431.4,False
+1,Grocery,2021-08-27,47809.66,False
+1,Grocery,2021-09-03,50528.87,False
+1,Grocery,2021-09-10,53834.55,True
+1,Grocery,2021-09-17,52277.17,False
+1,Grocery,2021-09-24,48675.98,False
+1,Grocery,2021-10-01,52271.66,False
+1,Grocery,2021-10-08,52850.39,False
+1,Grocery,2021-10-15,49725.84,False
+1,Grocery,2021-10-22,52368.18,False
+1,Grocery,2021-10-29,52177.78,False
+1,Grocery,2021-11-05,49223.22,False
+1,Grocery,2021-11-12,53023.5,False
+1,Grocery,2021-11-19,76079.38,False
+1,Grocery,2021-11-26,77433.43,True
+1,Grocery,2021-12-03,77408.7,False
+1,Grocery,2021-12-10,71378.41,False
+1,Grocery,2021-12-17,72526.41,False
+1,Grocery,2021-12-24,76206.94,True
+1,Grocery,2021-12-31,76252.21,False
+1,Grocery,2022-01-07,53803.75,False
+1,Grocery,2022-01-14,62196.34,False
+1,Grocery,2022-01-21,54040.13,False
+1,Grocery,2022-01-28,55500.2,False
+1,Grocery,2022-02-04,55094.68,False
+1,Grocery,2022-02-11,54386.54,True
+1,Grocery,2022-02-18,52018.28,False
+1,Grocery,2022-02-25,54752.26,False
+1,Grocery,2022-03-04,50971.16,False
+1,Grocery,2022-03-11,52359.57,False
+1,Grocery,2022-03-18,51786.59,False
+1,Grocery,2022-03-25,53253.07,False
+1,Grocery,2022-04-01,58883.42,False
+1,Grocery,2022-04-08,48477.0,False
+1,Grocery,2022-04-15,54909.2,False
+1,Grocery,2022-04-22,49210.15,False
+1,Grocery,2022-04-29,52110.49,False
+1,Grocery,2022-05-06,56061.09,False
+1,Grocery,2022-05-13,53547.8,False
+1,Grocery,2022-05-20,50741.12,False
+1,Grocery,2022-05-27,51695.61,False
+1,Grocery,2022-06-03,55231.25,False
+1,Grocery,2022-06-10,51754.73,False
+1,Grocery,2022-06-17,60170.18,False
+1,Grocery,2022-06-24,59791.35,False
+1,Grocery,2022-07-01,58096.81,False
+1,Grocery,2022-07-08,65134.05,False
+1,Grocery,2022-07-15,61407.38,False
+1,Grocery,2022-07-22,54808.11,False
+1,Grocery,2022-07-29,60385.49,False
+1,Grocery,2022-08-05,58313.28,False
+1,Grocery,2022-08-12,62147.21,False
+1,Grocery,2022-08-19,52083.21,False
+1,Grocery,2022-08-26,53826.06,False
+1,Grocery,2022-09-02,55423.76,False
+1,Grocery,2022-09-09,56374.07,True
+1,Grocery,2022-09-16,51257.32,False
+1,Grocery,2022-09-23,53470.2,False
+1,Grocery,2022-09-30,53167.48,False
+1,Grocery,2022-10-07,52769.9,False
+1,Grocery,2022-10-14,58865.25,False
+1,Grocery,2022-10-21,55512.45,False
+1,Grocery,2022-10-28,51396.18,False
+1,Grocery,2022-11-04,56891.43,False
+1,Grocery,2022-11-11,59950.55,False
+1,Grocery,2022-11-18,79774.71,False
+1,Grocery,2022-11-25,73443.51,True
+1,Grocery,2022-12-02,76079.74,False
+1,Grocery,2022-12-09,80505.99,False
+1,Grocery,2022-12-16,75617.92,False
+1,Grocery,2022-12-23,78545.03,True
+1,Grocery,2022-12-30,79420.46,False
+1,Grocery,2023-01-06,52714.93,False
+1,Grocery,2023-01-13,54931.83,False
+1,Grocery,2023-01-20,47025.86,False
+1,Grocery,2023-01-27,52616.45,False
+1,Grocery,2023-02-03,54594.39,False
+1,Grocery,2023-02-10,52154.74,True
+1,Grocery,2023-02-17,59403.61,False
+1,Grocery,2023-02-24,51795.61,False
+1,Grocery,2023-03-03,54319.24,False
+1,Grocery,2023-03-10,55794.59,False
+1,Grocery,2023-03-17,59119.31,False
+1,Grocery,2023-03-24,51974.86,False
+1,Grocery,2023-03-31,58520.81,False
+1,Grocery,2023-04-07,55686.87,False
+1,Grocery,2023-04-14,53255.91,False
+1,Grocery,2023-04-21,56913.32,False
+1,Grocery,2023-04-28,56304.1,False
+1,Grocery,2023-05-05,54354.3,False
+1,Grocery,2023-05-12,56077.73,False
+1,Grocery,2023-05-19,54988.33,False
+1,Grocery,2023-05-26,56283.79,False
+1,Grocery,2023-06-02,57703.71,False
+1,Grocery,2023-06-09,60061.82,False
+1,Grocery,2023-06-16,59050.62,False
+1,Grocery,2023-06-23,67526.13,False
+1,Grocery,2023-06-30,57361.72,False
+1,Grocery,2023-07-07,61910.86,False
+1,Grocery,2023-07-14,63809.5,False
+1,Grocery,2023-07-21,63089.58,False
+1,Grocery,2023-07-28,60878.74,False
+1,Grocery,2023-08-04,61963.57,False
+1,Grocery,2023-08-11,61299.76,False
+1,Grocery,2023-08-18,55107.23,False
+1,Grocery,2023-08-25,58753.04,False
+1,Grocery,2023-09-01,57569.96,False
+1,Grocery,2023-09-08,54993.53,True
+1,Grocery,2023-09-15,59023.19,False
+1,Grocery,2023-09-22,57590.83,False
+1,Grocery,2023-09-29,58903.12,False
+1,Grocery,2023-10-06,58493.43,False
+1,Grocery,2023-10-13,54895.25,False
+1,Grocery,2023-10-20,55615.68,False
+1,Grocery,2023-10-27,58932.75,False
+1,Grocery,2023-11-03,58638.83,False
+1,Grocery,2023-11-10,57109.04,False
+1,Grocery,2023-11-17,80003.0,False
+1,Grocery,2023-11-24,82952.23,True
+1,Grocery,2023-12-01,78327.52,False
+1,Grocery,2023-12-08,81222.58,False
+1,Grocery,2023-12-15,79397.74,False
+1,Grocery,2023-12-22,79407.41,True
+1,Grocery,2023-12-29,82746.94,False
+1,Apparel,2021-01-08,18742.87,False
+1,Apparel,2021-01-15,18749.58,False
+1,Apparel,2021-01-22,19209.77,False
+1,Apparel,2021-01-29,18071.16,False
+1,Apparel,2021-02-05,18683.44,False
+1,Apparel,2021-02-12,17807.86,True
+1,Apparel,2021-02-19,18396.27,False
+1,Apparel,2021-02-26,18004.81,False
+1,Apparel,2021-03-05,18226.65,False
+1,Apparel,2021-03-12,18692.42,False
+1,Apparel,2021-03-19,17437.79,False
+1,Apparel,2021-03-26,20074.76,False
+1,Apparel,2021-04-02,17303.62,False
+1,Apparel,2021-04-09,17133.68,False
+1,Apparel,2021-04-16,19286.17,False
+1,Apparel,2021-04-23,18973.79,False
+1,Apparel,2021-04-30,18840.42,False
+1,Apparel,2021-05-07,18861.64,False
+1,Apparel,2021-05-14,18302.53,False
+1,Apparel,2021-05-21,17523.44,False
+1,Apparel,2021-05-28,18416.61,False
+1,Apparel,2021-06-04,17756.36,False
+1,Apparel,2021-06-11,19260.83,False
+1,Apparel,2021-06-18,20428.29,False
+1,Apparel,2021-06-25,19835.12,False
+1,Apparel,2021-07-02,20306.24,False
+1,Apparel,2021-07-09,20984.54,False
+1,Apparel,2021-07-16,20122.97,False
+1,Apparel,2021-07-23,19907.74,False
+1,Apparel,2021-07-30,20884.48,False
+1,Apparel,2021-08-06,20903.05,False
+1,Apparel,2021-08-13,20243.75,False
+1,Apparel,2021-08-20,18133.48,False
+1,Apparel,2021-08-27,18783.68,False
+1,Apparel,2021-09-03,17288.98,False
+1,Apparel,2021-09-10,17342.96,True
+1,Apparel,2021-09-17,17980.5,False
+1,Apparel,2021-09-24,18452.41,False
+1,Apparel,2021-10-01,18941.75,False
+1,Apparel,2021-10-08,20007.18,False
+1,Apparel,2021-10-15,19468.67,False
+1,Apparel,2021-10-22,18570.25,False
+1,Apparel,2021-10-29,18714.5,False
+1,Apparel,2021-11-05,17846.76,False
+1,Apparel,2021-11-12,18749.79,False
+1,Apparel,2021-11-19,26624.08,False
+1,Apparel,2021-11-26,27191.74,True
+1,Apparel,2021-12-03,26174.2,False
+1,Apparel,2021-12-10,27403.54,False
+1,Apparel,2021-12-17,28333.01,False
+1,Apparel,2021-12-24,26873.08,True
+1,Apparel,2021-12-31,27349.93,False
+1,Apparel,2022-01-07,19526.94,False
+1,Apparel,2022-01-14,18562.13,False
+1,Apparel,2022-01-21,19142.33,False
+1,Apparel,2022-01-28,18969.4,False
+1,Apparel,2022-02-04,19063.39,False
+1,Apparel,2022-02-11,18297.19,True
+1,Apparel,2022-02-18,19032.38,False
+1,Apparel,2022-02-25,19475.94,False
+1,Apparel,2022-03-04,20351.19,False
+1,Apparel,2022-03-11,19925.92,False
+1,Apparel,2022-03-18,21017.86,False
+1,Apparel,2022-03-25,18406.81,False
+1,Apparel,2022-04-01,19899.93,False
+1,Apparel,2022-04-08,19297.27,False
+1,Apparel,2022-04-15,21120.5,False
+1,Apparel,2022-04-22,18439.63,False
+1,Apparel,2022-04-29,18428.77,False
+1,Apparel,2022-05-06,18662.48,False
+1,Apparel,2022-05-13,17307.85,False
+1,Apparel,2022-05-20,18763.59,False
+1,Apparel,2022-05-27,18570.97,False
+1,Apparel,2022-06-03,19406.97,False
+1,Apparel,2022-06-10,19596.61,False
+1,Apparel,2022-06-17,23155.01,False
+1,Apparel,2022-06-24,22339.25,False
+1,Apparel,2022-07-01,20982.08,False
+1,Apparel,2022-07-08,20710.14,False
+1,Apparel,2022-07-15,21978.86,False
+1,Apparel,2022-07-22,20365.34,False
+1,Apparel,2022-07-29,23219.28,False
+1,Apparel,2022-08-05,22649.88,False
+1,Apparel,2022-08-12,21183.55,False
+1,Apparel,2022-08-19,17921.4,False
+1,Apparel,2022-08-26,20699.13,False
+1,Apparel,2022-09-02,19394.98,False
+1,Apparel,2022-09-09,20629.52,True
+1,Apparel,2022-09-16,18097.92,False
+1,Apparel,2022-09-23,19010.89,False
+1,Apparel,2022-09-30,19572.46,False
+1,Apparel,2022-10-07,19627.44,False
+1,Apparel,2022-10-14,19197.52,False
+1,Apparel,2022-10-21,20180.56,False
+1,Apparel,2022-10-28,18676.56,False
+1,Apparel,2022-11-04,19526.7,False
+1,Apparel,2022-11-11,19780.52,False
+1,Apparel,2022-11-18,28252.67,False
+1,Apparel,2022-11-25,28447.55,True
+1,Apparel,2022-12-02,26812.34,False
+1,Apparel,2022-12-09,26461.23,False
+1,Apparel,2022-12-16,29009.26,False
+1,Apparel,2022-12-23,28175.86,True
+1,Apparel,2022-12-30,27220.56,False
+1,Apparel,2023-01-06,21207.65,False
+1,Apparel,2023-01-13,19933.14,False
+1,Apparel,2023-01-20,20907.82,False
+1,Apparel,2023-01-27,19924.64,False
+1,Apparel,2023-02-03,21735.96,False
+1,Apparel,2023-02-10,21478.52,True
+1,Apparel,2023-02-17,19692.06,False
+1,Apparel,2023-02-24,20807.96,False
+1,Apparel,2023-03-03,20531.81,False
+1,Apparel,2023-03-10,21200.16,False
+1,Apparel,2023-03-17,19117.38,False
+1,Apparel,2023-03-24,20620.67,False
+1,Apparel,2023-03-31,20973.23,False
+1,Apparel,2023-04-07,18455.2,False
+1,Apparel,2023-04-14,18990.55,False
+1,Apparel,2023-04-21,18237.59,False
+1,Apparel,2023-04-28,19847.86,False
+1,Apparel,2023-05-05,20753.53,False
+1,Apparel,2023-05-12,21477.28,False
+1,Apparel,2023-05-19,20209.27,False
+1,Apparel,2023-05-26,21625.75,False
+1,Apparel,2023-06-02,18935.33,False
+1,Apparel,2023-06-09,18661.79,False
+1,Apparel,2023-06-16,22322.27,False
+1,Apparel,2023-06-23,22735.34,False
+1,Apparel,2023-06-30,22377.67,False
+1,Apparel,2023-07-07,20563.82,False
+1,Apparel,2023-07-14,22361.73,False
+1,Apparel,2023-07-21,21285.33,False
+1,Apparel,2023-07-28,23079.48,False
+1,Apparel,2023-08-04,22824.13,False
+1,Apparel,2023-08-11,21665.72,False
+1,Apparel,2023-08-18,19906.55,False
+1,Apparel,2023-08-25,19433.16,False
+1,Apparel,2023-09-01,20347.46,False
+1,Apparel,2023-09-08,21280.92,True
+1,Apparel,2023-09-15,19551.56,False
+1,Apparel,2023-09-22,20909.77,False
+1,Apparel,2023-09-29,19996.32,False
+1,Apparel,2023-10-06,19777.38,False
+1,Apparel,2023-10-13,20412.06,False
+1,Apparel,2023-10-20,19594.09,False
+1,Apparel,2023-10-27,20044.94,False
+1,Apparel,2023-11-03,19482.56,False
+1,Apparel,2023-11-10,22346.32,False
+1,Apparel,2023-11-17,28727.22,False
+1,Apparel,2023-11-24,28083.15,True
+1,Apparel,2023-12-01,28922.9,False
+1,Apparel,2023-12-08,28646.65,False
+1,Apparel,2023-12-15,28566.29,False
+1,Apparel,2023-12-22,29335.33,True
+1,Apparel,2023-12-29,29481.76,False
+1,Home & Garden,2021-01-08,14602.12,False
+1,Home & Garden,2021-01-15,14582.65,False
+1,Home & Garden,2021-01-22,14822.74,False
+1,Home & Garden,2021-01-29,13317.11,False
+1,Home & Garden,2021-02-05,13921.67,False
+1,Home & Garden,2021-02-12,16097.74,True
+1,Home & Garden,2021-02-19,16320.82,False
+1,Home & Garden,2021-02-26,14914.84,False
+1,Home & Garden,2021-03-05,15548.55,False
+1,Home & Garden,2021-03-12,15364.08,False
+1,Home & Garden,2021-03-19,17454.32,False
+1,Home & Garden,2021-03-26,15999.36,False
+1,Home & Garden,2021-04-02,15078.26,False
+1,Home & Garden,2021-04-09,14472.05,False
+1,Home & Garden,2021-04-16,13998.39,False
+1,Home & Garden,2021-04-23,15370.34,False
+1,Home & Garden,2021-04-30,14665.0,False
+1,Home & Garden,2021-05-07,14180.08,False
+1,Home & Garden,2021-05-14,14776.36,False
+1,Home & Garden,2021-05-21,14464.65,False
+1,Home & Garden,2021-05-28,16555.68,False
+1,Home & Garden,2021-06-04,15966.07,False
+1,Home & Garden,2021-06-11,15313.38,False
+1,Home & Garden,2021-06-18,18243.83,False
+1,Home & Garden,2021-06-25,17206.41,False
+1,Home & Garden,2021-07-02,16516.94,False
+1,Home & Garden,2021-07-09,18319.76,False
+1,Home & Garden,2021-07-16,17596.12,False
+1,Home & Garden,2021-07-23,16428.52,False
+1,Home & Garden,2021-07-30,17078.21,False
+1,Home & Garden,2021-08-06,16578.77,False
+1,Home & Garden,2021-08-13,16212.9,False
+1,Home & Garden,2021-08-20,16159.15,False
+1,Home & Garden,2021-08-27,16911.09,False
+1,Home & Garden,2021-09-03,14444.62,False
+1,Home & Garden,2021-09-10,15930.29,True
+1,Home & Garden,2021-09-17,15034.6,False
+1,Home & Garden,2021-09-24,15171.75,False
+1,Home & Garden,2021-10-01,15107.32,False
+1,Home & Garden,2021-10-08,14918.14,False
+1,Home & Garden,2021-10-15,15617.04,False
+1,Home & Garden,2021-10-22,14971.95,False
+1,Home & Garden,2021-10-29,15812.52,False
+1,Home & Garden,2021-11-05,15586.51,False
+1,Home & Garden,2021-11-12,15459.5,False
+1,Home & Garden,2021-11-19,21722.55,False
+1,Home & Garden,2021-11-26,21985.16,True
+1,Home & Garden,2021-12-03,22998.8,False
+1,Home & Garden,2021-12-10,22822.46,False
+1,Home & Garden,2021-12-17,21728.12,False
+1,Home & Garden,2021-12-24,22550.31,True
+1,Home & Garden,2021-12-31,23053.86,False
+1,Home & Garden,2022-01-07,14502.78,False
+1,Home & Garden,2022-01-14,16176.87,False
+1,Home & Garden,2022-01-21,15286.9,False
+1,Home & Garden,2022-01-28,16226.34,False
+1,Home & Garden,2022-02-04,15240.46,False
+1,Home & Garden,2022-02-11,14473.76,True
+1,Home & Garden,2022-02-18,14621.28,False
+1,Home & Garden,2022-02-25,15892.52,False
+1,Home & Garden,2022-03-04,16065.76,False
+1,Home & Garden,2022-03-11,15207.25,False
+1,Home & Garden,2022-03-18,16378.94,False
+1,Home & Garden,2022-03-25,14668.38,False
+1,Home & Garden,2022-04-01,15879.47,False
+1,Home & Garden,2022-04-08,15035.29,False
+1,Home & Garden,2022-04-15,15469.19,False
+1,Home & Garden,2022-04-22,16008.13,False
+1,Home & Garden,2022-04-29,15341.79,False
+1,Home & Garden,2022-05-06,15713.2,False
+1,Home & Garden,2022-05-13,16770.85,False
+1,Home & Garden,2022-05-20,15597.98,False
+1,Home & Garden,2022-05-27,16671.93,False
+1,Home & Garden,2022-06-03,15212.4,False
+1,Home & Garden,2022-06-10,16471.55,False
+1,Home & Garden,2022-06-17,18969.89,False
+1,Home & Garden,2022-06-24,16049.49,False
+1,Home & Garden,2022-07-01,17320.07,False
+1,Home & Garden,2022-07-08,18365.06,False
+1,Home & Garden,2022-07-15,17794.49,False
+1,Home & Garden,2022-07-22,18239.65,False
+1,Home & Garden,2022-07-29,17522.82,False
+1,Home & Garden,2022-08-05,18055.26,False
+1,Home & Garden,2022-08-12,17888.08,False
+1,Home & Garden,2022-08-19,17095.19,False
+1,Home & Garden,2022-08-26,16424.69,False
+1,Home & Garden,2022-09-02,16501.59,False
+1,Home & Garden,2022-09-09,15954.0,True
+1,Home & Garden,2022-09-16,15911.71,False
+1,Home & Garden,2022-09-23,15967.52,False
+1,Home & Garden,2022-09-30,16602.29,False
+1,Home & Garden,2022-10-07,16005.23,False
+1,Home & Garden,2022-10-14,16552.82,False
+1,Home & Garden,2022-10-21,17906.55,False
+1,Home & Garden,2022-10-28,17017.86,False
+1,Home & Garden,2022-11-04,16134.51,False
+1,Home & Garden,2022-11-11,17294.46,False
+1,Home & Garden,2022-11-18,22852.01,False
+1,Home & Garden,2022-11-25,21643.99,True
+1,Home & Garden,2022-12-02,22431.03,False
+1,Home & Garden,2022-12-09,21798.52,False
+1,Home & Garden,2022-12-16,22952.49,False
+1,Home & Garden,2022-12-23,23244.46,True
+1,Home & Garden,2022-12-30,24502.49,False
+1,Home & Garden,2023-01-06,16754.87,False
+1,Home & Garden,2023-01-13,16359.87,False
+1,Home & Garden,2023-01-20,17160.76,False
+1,Home & Garden,2023-01-27,14894.87,False
+1,Home & Garden,2023-02-03,16744.45,False
+1,Home & Garden,2023-02-10,17160.41,True
+1,Home & Garden,2023-02-17,15487.83,False
+1,Home & Garden,2023-02-24,17469.11,False
+1,Home & Garden,2023-03-03,16879.68,False
+1,Home & Garden,2023-03-10,16328.86,False
+1,Home & Garden,2023-03-17,17129.43,False
+1,Home & Garden,2023-03-24,18372.37,False
+1,Home & Garden,2023-03-31,16820.27,False
+1,Home & Garden,2023-04-07,16884.55,False
+1,Home & Garden,2023-04-14,16368.38,False
+1,Home & Garden,2023-04-21,16090.04,False
+1,Home & Garden,2023-04-28,17364.69,False
+1,Home & Garden,2023-05-05,16114.39,False
+1,Home & Garden,2023-05-12,16824.64,False
+1,Home & Garden,2023-05-19,16427.24,False
+1,Home & Garden,2023-05-26,17159.23,False
+1,Home & Garden,2023-06-02,17064.76,False
+1,Home & Garden,2023-06-09,17607.19,False
+1,Home & Garden,2023-06-16,18261.04,False
+1,Home & Garden,2023-06-23,18455.66,False
+1,Home & Garden,2023-06-30,17938.51,False
+1,Home & Garden,2023-07-07,18353.88,False
+1,Home & Garden,2023-07-14,18984.59,False
+1,Home & Garden,2023-07-21,19283.87,False
+1,Home & Garden,2023-07-28,18039.02,False
+1,Home & Garden,2023-08-04,19397.37,False
+1,Home & Garden,2023-08-11,19776.41,False
+1,Home & Garden,2023-08-18,17284.27,False
+1,Home & Garden,2023-08-25,18396.31,False
+1,Home & Garden,2023-09-01,16422.88,False
+1,Home & Garden,2023-09-08,16084.25,True
+1,Home & Garden,2023-09-15,15698.22,False
+1,Home & Garden,2023-09-22,18168.81,False
+1,Home & Garden,2023-09-29,17552.06,False
+1,Home & Garden,2023-10-06,17034.12,False
+1,Home & Garden,2023-10-13,17300.3,False
+1,Home & Garden,2023-10-20,16260.72,False
+1,Home & Garden,2023-10-27,18953.67,False
+1,Home & Garden,2023-11-03,17230.79,False
+1,Home & Garden,2023-11-10,17230.43,False
+1,Home & Garden,2023-11-17,24457.23,False
+1,Home & Garden,2023-11-24,24288.18,True
+1,Home & Garden,2023-12-01,24109.85,False
+1,Home & Garden,2023-12-08,23363.6,False
+1,Home & Garden,2023-12-15,24324.57,False
+1,Home & Garden,2023-12-22,25397.0,True
+1,Home & Garden,2023-12-29,25009.07,False
