@@ -29,3 +29,6 @@ Thumbs.db
 .pytest_cache/
 *.log
 scratch/
+test_plot.html
+*.html
+
