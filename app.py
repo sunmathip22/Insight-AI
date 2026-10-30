@@ -236,15 +236,13 @@ if uploaded_file is not None:
         st.sidebar.error(f"⚠️ Upload Error: {e}")
         raw_df = None
 else:
-    # Default initial dataset so dashboard loads immediately
-    default_path = os.path.join(DATA_DIR, "walmart_weekly_sales.csv")
-    if os.path.exists(default_path):
-        raw_df = cached_load_data(default_path)
-        source_name = "walmart_weekly_sales.csv (Default)"
+    raw_df = None
+    source_name = None
+    is_uploaded = False
     st.sidebar.markdown(
-        f"""
+        """
         <div style="margin-top: 0.5rem; font-size: 0.82rem; word-break: break-all;">
-            <b>📁 Active File:</b> <span class="badge-pill badge-blue">{source_name}</span>
+            <b>📁 Active File:</b> <span class="badge-pill badge-blue">No file chosen</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -300,7 +298,7 @@ st.title("📈 Enterprise Sales Forecasting Dashboard")
 
 # If no data is available
 if raw_df is None or raw_df.empty:
-    st.error("⚠️ No valid dataset loaded. Please upload a valid CSV or Excel file using the sidebar upload card.")
+    st.info("Please upload a CSV or Excel dataset to view sales analysis and forecasting.")
     st.stop()
 
 

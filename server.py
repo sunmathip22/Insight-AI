@@ -170,23 +170,16 @@ def auto_detect_columns(df: pd.DataFrame) -> Tuple[Optional[str], Optional[str],
     return date_col, sales_col, group_col
 
 
-def init_default_data():
-    if UPLOADED_DATA_CACHE["df"] is None or UPLOADED_DATA_CACHE["df"].empty:
-        file_path = os.path.join(DATA_DIR, "walmart_weekly_sales.csv")
-        if os.path.exists(file_path):
-            with open(file_path, "rb") as f:
-                b = f.read()
-            df = pd.read_csv(io.BytesIO(b))
-            d, s, g = auto_detect_columns(df)
-            UPLOADED_DATA_CACHE["filename"] = "walmart_weekly_sales.csv (Sample)"
-            UPLOADED_DATA_CACHE["file_bytes"] = b
-            UPLOADED_DATA_CACHE["df"] = df
-            UPLOADED_DATA_CACHE["sheet_names"] = []
-            UPLOADED_DATA_CACHE["selected_sheet"] = None
-            UPLOADED_DATA_CACHE["date_col"] = d
-            UPLOADED_DATA_CACHE["sales_col"] = s
-            UPLOADED_DATA_CACHE["group_col"] = g
-            UPLOADED_DATA_CACHE["is_auto_detected"] = True
+def clear_uploaded_cache():
+    UPLOADED_DATA_CACHE["filename"] = None
+    UPLOADED_DATA_CACHE["file_bytes"] = None
+    UPLOADED_DATA_CACHE["df"] = None
+    UPLOADED_DATA_CACHE["sheet_names"] = []
+    UPLOADED_DATA_CACHE["selected_sheet"] = None
+    UPLOADED_DATA_CACHE["date_col"] = None
+    UPLOADED_DATA_CACHE["sales_col"] = None
+    UPLOADED_DATA_CACHE["group_col"] = "None"
+    UPLOADED_DATA_CACHE["is_auto_detected"] = False
 
 
 def build_dashboard_html(
@@ -199,7 +192,6 @@ def build_dashboard_html(
     selected_sheet=None,
     upload_error=None,
 ):
-    init_default_data()
 
     sheet_options_html = ""
     raw_preview_html = ""
@@ -236,7 +228,7 @@ def build_dashboard_html(
     sales_col = custom_sales_col or UPLOADED_DATA_CACHE["sales_col"]
     group_col = custom_group_col or UPLOADED_DATA_CACHE["group_col"]
 
-    # Handle empty/unuploaded state cleanly
+    # Handle empty/unuploaded state cleanly (Upload-first dashboard)
     if df is None or df.empty:
         error_banner = f"<div class='alert alert-danger mb-4'>{upload_error}</div>" if upload_error else ""
         return f"""<!DOCTYPE html>
@@ -248,69 +240,214 @@ def build_dashboard_html(
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        body {{ background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }}
-        .sidebar-card {{ background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.35rem; }}
+        :root {{
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --highlight-color: #2563eb;
+        }}
+        [data-bs-theme="dark"] {{
+            --bg-body: #0b1120;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --highlight-color: #60a5fa;
+        }}
+        body {{
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }}
+        .sidebar-card, .card-panel {{
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 1.35rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            transition: background-color 0.25s ease, border-color 0.25s ease;
+        }}
+        .theme-switch-btn {{
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.95rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }}
     </style>
 </head>
-<body class="p-4">
+<body class="p-3 p-md-4">
     <div class="container-fluid">
-        <h2 class="fw-bold mb-3">📈 Enterprise Sales Forecasting Dashboard</h2>
-        {error_banner}
-        <div class="row g-4">
-            <div class="col-lg-4">
-                <div class="sidebar-card">
-                    <h5 class="fw-bold mb-3"><i class="bi bi-cloud-arrow-up-fill me-2 text-primary"></i>Upload Dataset</h5>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Select File (.csv, .xlsx, .xls)</label>
-                        <input type="file" id="emptyFileInput" class="form-control" accept=".csv,.xlsx,.xls">
-                        <div id="emptyUploadStatusMsg" class="d-none mt-2"></div>
-                    </div>
-                    <hr>
-                    <a href="/?dataset=walmart" class="btn btn-outline-secondary w-100">Back to Walmart Demo</a>
+        <!-- Top Nav / Header -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+            <div>
+                <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                    <span>📈</span> Enterprise Sales Forecasting Dashboard
+                </h2>
+                <div class="text-secondary small">
+                    Dataset: <b>None</b> • Status: <span class="badge bg-warning-subtle text-warning-emphasis">Awaiting File Upload</span>
                 </div>
             </div>
-            <div class="col-lg-8">
-                <div class="alert alert-info py-4 text-center">
-                    <h5>👈 Please upload a CSV or Excel file to begin forecasting</h5>
-                    <p class="text-secondary mb-0">Supports automatic date parsing, delimiter detection, and multi-sheet workbooks.</p>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" id="themeToggleBtn" class="btn btn-outline-secondary theme-switch-btn" onclick="toggleDashboardTheme()">
+                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                    <span id="themeText">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+
+        {error_banner}
+
+        <div class="row g-4">
+            <!-- Sidebar (Upload & Disabled Controls) -->
+            <div class="col-lg-3">
+                <div class="sidebar-card mb-3">
+                    <h5 class="fw-bold mb-2 d-flex align-items-center gap-2">
+                        <i class="bi bi-cloud-arrow-up-fill text-primary"></i> Upload Dataset
+                    </h5>
+                    <p class="small text-secondary mb-2">Upload CSV or Excel file (.csv, .xlsx, .xls) directly from your computer:</p>
+                    <div class="mb-2">
+                        <input type="file" id="datasetFileInput" class="form-control form-control-sm mb-2" accept=".csv,.xlsx,.xls">
+                        <div id="uploadStatusMsg" class="d-none"></div>
+                    </div>
+                    <div class="mt-3 pt-2 border-top small d-flex flex-column gap-1">
+                        <span class="text-secondary fw-semibold">📁 Uploaded File:</span>
+                        <span class="badge bg-secondary-subtle text-secondary-emphasis text-start py-2 px-2 text-wrap" style="font-size: 0.8rem;">
+                            No file chosen
+                        </span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card opacity-75">
+                    <h5 class="fw-bold mb-3 d-flex align-items-center gap-2 text-secondary">
+                        <i class="bi bi-sliders"></i> Controls & Parameters
+                    </h5>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small text-secondary">Dataset Cadence</label>
+                        <select class="form-select form-select-sm" disabled>
+                            <option>Weekly</option>
+                            <option>Daily</option>
+                            <option>Monthly</option>
+                            <option>Yearly</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold small text-secondary">Forecast Horizon</label>
+                        <input type="number" class="form-control form-control-sm" value="13" disabled>
+                    </div>
+                    <button class="btn btn-secondary w-100 fw-bold py-2 disabled" disabled>
+                        <i class="bi bi-play-fill me-1"></i>Run Forecasting
+                    </button>
+                    <div class="text-muted small mt-2 text-center">Upload dataset to enable controls</div>
+                </div>
+            </div>
+
+            <!-- Main Area: Simple Upload-First Prompt (No KPIs, charts, or tables) -->
+            <div class="col-lg-9">
+                <div class="card-panel text-center py-5 shadow-sm">
+                    <div class="mb-3 text-primary">
+                        <i class="bi bi-cloud-arrow-up" style="font-size: 3.5rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Please upload a CSV or Excel dataset to view sales analysis and forecasting.</h5>
+                    <p class="text-secondary small mb-0">Supports automatic date parsing, column detection, and multi-sheet workbooks.</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById("emptyFileInput")?.addEventListener("change", async function(e) {{
-            e.preventDefault();
-            const file = e.target.files && e.target.files[0];
-            if (!file) return;
-            const status = document.getElementById("emptyUploadStatusMsg");
-            if (status) {{
-                status.className = "alert alert-info py-2 px-2 small mb-2 d-flex align-items-center gap-2";
-                status.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Reading and processing ' + file.name + '...';
-            }}
-            try {{
-                const formData = new FormData();
-                formData.append("dataset_file", file);
-                const uploadUrl = (window.location.protocol === "file:") ? "http://localhost:8000/upload" : "/upload";
-                const res = await fetch(uploadUrl, {{ method: "POST", body: formData }});
-                if (!res.ok) {{
-                    const err = await res.json().catch(() => null);
-                    throw new Error((err && err.error) ? err.error : ("Server returned HTTP " + res.status));
-                }}
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error || "Upload failed");
-                if (data.html) {{
-                    document.open();
-                    document.write(data.html);
-                    document.close();
-                }}
-            }} catch (err) {{
-                console.error("Upload error:", err);
-                if (status) {{
-                    status.className = "alert alert-danger py-2 px-2 small mb-2";
-                    status.innerHTML = '<i class="bi bi-exclamation-octagon-fill me-1"></i> <b>Upload failed:</b> ' + (err.message || err);
+        function applyTheme(theme) {{
+            const isDark = theme === "dark";
+            document.documentElement.setAttribute("data-bs-theme", theme);
+            const icon = document.getElementById("themeIcon");
+            const text = document.getElementById("themeText");
+            const btn = document.getElementById("themeToggleBtn");
+            if (icon && text && btn) {{
+                if (isDark) {{
+                    icon.className = "bi bi-sun-fill text-warning";
+                    text.textContent = "Light Mode";
+                    btn.classList.remove("btn-outline-secondary");
+                    btn.classList.add("btn-outline-warning");
+                }} else {{
+                    icon.className = "bi bi-moon-stars-fill";
+                    text.textContent = "Dark Mode";
+                    btn.classList.remove("btn-outline-warning");
+                    btn.classList.add("btn-outline-secondary");
                 }}
             }}
+            localStorage.setItem("dashboard_theme", theme);
+        }}
+
+        function toggleDashboardTheme() {{
+            const currentTheme = document.documentElement.getAttribute("data-bs-theme") || "light";
+            applyTheme(currentTheme === "dark" ? "light" : "dark");
+        }}
+
+        function initFileUploadHandler() {{
+            const fileInput = document.getElementById("datasetFileInput");
+            if (!fileInput) return;
+
+            fileInput.addEventListener("change", async function(event) {{
+                event.preventDefault();
+                const file = event.target.files && event.target.files[0];
+                if (!file) return;
+
+                const statusDiv = document.getElementById("uploadStatusMsg");
+                if (statusDiv) {{
+                    statusDiv.className = "alert alert-info py-2 px-2 small mb-2 d-flex align-items-center gap-2";
+                    statusDiv.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Reading and processing ' + file.name + '...';
+                }}
+
+                try {{
+                    const formData = new FormData();
+                    formData.append("dataset_file", file);
+
+                    const uploadUrl = (window.location.protocol === "file:") ? "http://localhost:8000/upload" : "/upload";
+                    const response = await fetch(uploadUrl, {{
+                        method: "POST",
+                        body: formData,
+                    }});
+
+                    if (!response.ok) {{
+                        const errData = await response.json().catch(() => null);
+                        const msg = (errData && errData.error) ? errData.error : ("Server responded with HTTP " + response.status);
+                        throw new Error(msg);
+                    }}
+
+                    const data = await response.json();
+                    if (!data.success) {{
+                        throw new Error(data.error || "Upload failed");
+                    }}
+
+                    if (data.html) {{
+                        document.open();
+                        document.write(data.html);
+                        document.close();
+                    }}
+                }} catch (err) {{
+                    console.error("[Upload Error]", err);
+                    if (statusDiv) {{
+                        statusDiv.className = "alert alert-danger py-2 px-2 small mb-2";
+                        statusDiv.innerHTML = '<i class="bi bi-exclamation-octagon-fill me-1"></i> <b>Upload failed:</b> ' + (err.message || err);
+                    }}
+                }}
+            }});
+        }}
+
+        document.addEventListener("DOMContentLoaded", function() {{
+            const savedTheme = localStorage.getItem("dashboard_theme") || "light";
+            applyTheme(savedTheme);
+            initFileUploadHandler();
         }});
+        initFileUploadHandler();
     </script>
 </body>
 </html>"""
@@ -1039,7 +1176,12 @@ def build_dashboard_html(
                     </div>
                     {sheet_options_html}
                     <div class="mt-3 pt-2 border-top small d-flex flex-column gap-1">
-                        <span class="text-secondary fw-semibold">📁 Uploaded File:</span>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-secondary fw-semibold">📁 Uploaded File:</span>
+                            <button type="button" class="btn btn-outline-danger btn-sm py-0 px-2" style="font-size: 0.72rem;" onclick="clearUploadedDataset()">
+                                <i class="bi bi-x-circle me-1"></i>Remove
+                            </button>
+                        </div>
                         <span class="badge bg-secondary-subtle text-secondary-emphasis text-start py-2 px-2 text-wrap" style="word-break: break-all; font-size: 0.8rem;">
                             {source_name}
                         </span>
@@ -1358,6 +1500,25 @@ def build_dashboard_html(
             }});
         }}
 
+        async function clearUploadedDataset() {{
+            try {{
+                const clearUrl = (window.location.protocol === "file:") ? "http://localhost:8000/clear" : "/clear";
+                const res = await fetch(clearUrl, {{ method: "POST" }});
+                if (res.ok) {{
+                    const data = await res.json();
+                    if (data && data.html) {{
+                        document.open();
+                        document.write(data.html);
+                        document.close();
+                        return;
+                    }}
+                }}
+                window.location.href = "/";
+            }} catch (err) {{
+                window.location.href = "/?clear=1";
+            }}
+        }}
+
         document.addEventListener("DOMContentLoaded", function() {{
             const savedTheme = localStorage.getItem("dashboard_theme") || "light";
             applyTheme(savedTheme);
@@ -1385,6 +1546,16 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
         """Handles multipart file uploads for CSV / Excel files without page reload."""
         parsed = urllib.parse.urlparse(self.path)
         clean_path = parsed.path.rstrip("/")
+
+        if clean_path == "/clear":
+            clear_uploaded_cache()
+            new_html = build_dashboard_html()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": True, "html": new_html}).encode("utf-8"))
+            return
 
         if clean_path == "/upload":
             content_type = self.headers.get("Content-Type", "")
@@ -1517,6 +1688,10 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         params = urllib.parse.parse_qs(parsed.query)
+
+        clean_path = parsed.path.rstrip("/")
+        if clean_path == "/clear" or "clear" in params:
+            clear_uploaded_cache()
 
         dataset = params.get("dataset", [None])[0]
         if dataset and dataset not in ["Weekly", "Daily", "Monthly", "Yearly"]:
