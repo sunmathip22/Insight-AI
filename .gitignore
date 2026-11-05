@@ -10,6 +10,11 @@ env/
 venv/
 .venv/
 ENV/
+.env
+.env.*
+
+# Secrets & Configuration
+.streamlit/secrets.toml
 
 # Distribution / packaging
 build/

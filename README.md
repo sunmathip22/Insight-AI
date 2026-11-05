@@ -1,8 +1,17 @@
-# 📈 Enterprise Sales Forecasting Dashboard
+# 📈 Insight-AI: Enterprise Sales Forecasting Dashboard
 
 A universal, production-grade sales forecasting web application built in Python using **Streamlit**, **Pandas**, **Statsmodels**, **Plotly**, and **Scikit-Learn**. 
 
-Designed to operate seamlessly on **ANY sales dataset** (CSV or Excel) without hard-coded column dependencies, the dashboard automates the entire forecasting lifecycle: from data cleaning, frequency detection, and anomaly flagging to rolling-origin backtesting, automated model selection, future projections with 95% confidence intervals, and operational inventory/staffing recommendations.
+Designed to operate seamlessly on **ANY sales dataset** (CSV or Excel) without hard-coded column dependencies, Insight-AI automates the entire forecasting lifecycle: from data cleaning, frequency detection, and anomaly flagging to rolling-origin backtesting, automated model selection, future projections with 95% confidence intervals, and operational inventory/staffing recommendations.
+
+---
+
+## 💻 Tech Stack
+
+- **Application & Server**: Python 3.9+, Streamlit, Python Native HTTP Server (`server.py`)
+- **Data Engineering**: Pandas, NumPy, Scipy, OpenPyXL, XLRD
+- **Time Series & Statistical Modeling**: Statsmodels (ARIMA, SARIMA, Holt-Winters Exponential Smoothing), Scikit-Learn
+- **Data Visualization**: Plotly (Express & Graph Objects), HTML5/CSS3 (Dark & Light theme support)
 
 ---
 
@@ -52,11 +61,13 @@ sales-dashboard/
 │   ├── walmart_weekly_sales.csv# Demo 1: Weekly department-level retail sales
 │   ├── retail_monthly_sales.csv# Demo 2: Monthly category revenues
 │   └── daily_ecommerce_sales.csv# Demo 3: Daily multi-channel ecommerce transactions
-├── generate_samples.py         # Script to generate sample datasets
+├── generate_samples.py         # Script to generate synthetic sample datasets
 ├── test_app.py                 # Automated unit and integration test suite
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Documentation and guide
 ```
+
+> **📌 Note on Demo Datasets**: The demo datasets in `/data` (`walmart_weekly_sales.csv`, `retail_monthly_sales.csv`, `daily_ecommerce_sales.csv`) are synthetic benchmarks realistically generated via `generate_samples.py` for testing, demonstration, and continuous integration.
 
 ---
 
